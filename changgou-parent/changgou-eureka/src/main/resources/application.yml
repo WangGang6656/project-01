@@ -1,0 +1,13 @@
+server:
+  port: 7001  #tomcat端口
+spring:
+  application:
+    name: eureka    #eurka注册中心名字
+eureka:
+  instance:        # eureka实例信息
+    hostname: 127.0.0.1
+  client:
+    register-with-eureka: false  #是否将自己注册到eureka
+    fetch-registry: false        #是否拉取eurka服务
+    service-url:               # EurekaServer的地址，
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
